@@ -1,4 +1,4 @@
-map = []
+game_map = []
 height = 21
 width = 41
 
@@ -11,11 +11,11 @@ for i in range(height):
             row.append("#")
         else:
             row.append(".")
-    map.append(row)
+    game_map.append(row)
 
-def show_map(map):
-    for row in map:
+def show_map(game_map):
+    for row in game_map:
         print("".join(row))
 
 if __name__ == "__main__":
-    show_map(map)
+    show_map(game_map)

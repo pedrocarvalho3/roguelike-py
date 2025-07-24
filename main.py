@@ -1,6 +1,7 @@
 import os
-from map import map, show_map
+from getch import getch 
 
+from map import game_map, show_map
 from player_movements import (
     move_player_left,
     move_player_right,
@@ -28,14 +29,26 @@ def show_start_screen():
 def game():
     show_start_screen()
     clear_screen()
-    show_map(map)
+    show_map(game_map)
 
 
     while True:
-        input("\nPressione Enter para mover para cima...")
-        move_player_left()
+        key = getch().lower()  
+
+        if key == "w":
+            move_player_up()
+        elif key == "s":
+            move_player_down()
+        elif key == "a":
+            move_player_left()
+        elif key == "d":
+            move_player_right()
+        elif key == "q":
+            print("Saindo do jogo...")
+            break
+
         clear_screen()
-        show_map(map)
+        show_map(game_map)
 
 
 
