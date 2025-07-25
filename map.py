@@ -1,16 +1,16 @@
 game_map = []
-height = 21
-width = 41
+height = 41
+width = 61
 
 for i in range(height):
     row = []
     for j in range(width):
         if i == (height - 1) // 2 and j == (width - 1) // 2:
-            row.append("@")
+            row.append("💂🏼‍♂️")
         elif i == 0 or i == height - 1 or j == 0 or j == width - 1:
-            row.append("#")
+            row.append(" █")
         else:
-            row.append(".")
+            row.append(" .")
     game_map.append(row)
 
 def show_map(game_map):
